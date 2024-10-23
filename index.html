@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering the Nation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="_images/empowering-the-nation-high-resolution-logo (1).png" alt="Empowering the Nation Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#six-month-courses">Six-Month Courses</a></li>
+                <li><a href="#six-week-courses">Six-Week Courses</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="six-month-courses">
+            <h2>Six-Month Courses</h2>
+            <div class="course">
+                <h3>First Aid</h3>
+                <p>Fee: R1,500</p>
+                <a href="course1.html">View Details</a>
+            </div>
+            <div class="course">
+                <h3>Sewing</h3>
+                <p>Fee: R1,500</p>
+                <a href="course2.html">View Details</a>
+            </div>
+            <div class="course">
+                <h3>Landscaping</h3>
+                <p>Fee: R1,500</p>
+                <a href="course3.html">View Details</a>
+            </div>
+            <div class="course">
+                <h3>Life Skills</h3>
+                <p>Fee: R1,500</p>
+                <a href="course4.html">View Details</a>
+            </div>
+
+        </section>
+
+        <section id="six-week-courses">
+            <h2>Six-Week Courses</h2>
+            <div class="course">
+                <h3>Child minding</h3>
+                <p>Fee: R750</p>
+                <a href="short-course1.html">View Details</a>
+            </div>
+            <div class="course">
+                <h3>Cooking</h3>
+                <p>Fee: R750</p>
+                <a href="short-course2.html">View Details</a>
+            </div>
+            <div class="course">
+                <h3>Garden maintenance</h3>
+                <p>Fee: R750</p>
+                <a href="short-course3.html">View Details</a>
+            </div>
+        </section>
+
+        <section id="calculate-fees">
+            <h2>Calculate Total Fee</h2>
+            <form id="fee-calculation-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                
+                <h3>Select Courses:</h3>
+                <div>
+                    <input type="checkbox" id="course1" value="10000">
+                    <label for="course1">Course 1 (R10,000)</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="course2" value="12000">
+                    <label for="course2">Course 2 (R12,000)</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="course3" value="15000">
+                    <label for="course3">Course 3 (R15,000)</label>
+                </div>
+                <button type="submit">Calculate Total Fee</button>
+            </form>
+            <p id="total-fee">Total Fee: R0.00</p>
+        </section>
+        
+        <script>
+            document.getElementById('fee-calculation-form').addEventListener('submit', function(event) {
+                event.preventDefault(); 
+        
+                // Get selected courses
+                const course1 = document.getElementById('course1').checked ? parseInt(document.getElementById('course1').value) : 0;
+                const course2 = document.getElementById('course2').checked ? parseInt(document.getElementById('course2').value) : 0;
+                const course3 = document.getElementById('course3').checked ? parseInt(document.getElementById('course3').value) : 0;
+        
+                // Calculate total fee
+                const totalFee = course1 + course2 + course3;
+        
+                // Display total fee
+                document.getElementById('total-fee').innerText = `Total Fee: R${totalFee.toLocaleString()}`;
+            });
+        </script>
+    </main>
+
+    <footer>
+        <p>Contact Details:</p>
+        <p>Phone Number: 011 123 4567</p>
+        <p>Email Address: <a href="mailto:info@empoweringthenation.co.za">info@empoweringthenation.co.za</a></p>
+        <p>Physical Address: 123 Main St, Sandton, Johannesburg</p>
+        <p><a href="https://www.google.com/maps/embed?...">View Map</a></p>
+    </footer>
+</body>
+</html>
